@@ -8,7 +8,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    const session = await getServerSession(req, res, authOptions);
+    const session = await getServerSession(req, res, authOptions as {});
     if (!session) {
       res.status(401).json({ message: "Please sign in" });
       //   redirect("api/auth/signin");

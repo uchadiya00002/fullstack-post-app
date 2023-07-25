@@ -8,7 +8,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    const session = await getServerSession(req, res, authOptions);
+    const session = await getServerSession(req, res, authOptions as {});
     if (!session)
       res.status(401).json({ message: "Please sign in to create a post" });
 

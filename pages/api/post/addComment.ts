@@ -7,7 +7,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse) {
-  const session = await getServerSession(req, res, authOptions)
+  const session = await getServerSession(req, res, authOptions as {})
   if (!session) {
     return res.status(401).json({ message: "Please signin to post a comment." })
   }
